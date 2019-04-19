@@ -11,8 +11,8 @@ import torch
 
 from torch.autograd import Variable
 
-from spotlight.helpers import iter_none, make_tuple
-from spotlight.torch_utils import gpu, grouped_minibatch, minibatch
+from helpers import iter_none, make_tuple
+from torch_utils import gpu, grouped_minibatch, minibatch
 
 
 def _sliding_window(tensor, window_size, step_size=1):
@@ -325,15 +325,30 @@ class Interactions(object):
 
     def num_user_features(self):
 
-        return _dim_or_zero(self.user_features)
+        x = 0
+        try:
+            x = self.user_features.shape[0]
+            return x
+        except:
+            return x
 
     def num_context_features(self):
 
-        return _dim_or_zero(self.context_features)
+        x = 0
+        try:
+            x = self.context_features.shape[0]
+            return x
+        except:
+            return x
 
     def num_item_features(self):
 
-        return _dim_or_zero(self.item_features)
+        x = 0
+        try:
+            x = self.item_features.shape[0]
+            return x
+        except:
+            return x
 
     def tocoo(self):
         """

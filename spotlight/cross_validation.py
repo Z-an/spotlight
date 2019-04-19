@@ -6,7 +6,7 @@ import numpy as np
 
 from sklearn.utils import murmurhash3_32
 
-from spotlight.interactions import Interactions, _slice_or_none
+from interactions import Interactions, _slice_or_none
 
 
 def random_train_test_split(interactions,

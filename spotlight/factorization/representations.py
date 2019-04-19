@@ -65,6 +65,9 @@ class FeatureNet(nn.Module):
 
         self.input_dim = input_dim
         self.output_dim = output_dim
+        
+        print('input dim',input_dim)
+        print('output dim',output_dim)
 
         self.fc_1 = nn.Linear(self.input_dim,
                               self.output_dim,
