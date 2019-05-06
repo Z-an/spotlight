@@ -3,7 +3,13 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 
-from spotlight.torch_utils import gpu
+
+def gpu(tensor, gpu=False):
+
+    if gpu:
+        return tensor.cuda()
+    else:
+        return tensor
 
 
 def _fnc_or_none(arg, fnc):

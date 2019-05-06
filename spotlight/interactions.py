@@ -280,7 +280,7 @@ class Interactions(object):
                 timestamps=timestamps_batch,
                 weights=weights_batch,
                 user_features=_slice_or_none(user_features, uids_batch),
-                item_features=item_features,
+                item_features=_slice_or_none(item_features, iids_batch),
                 context_features=cf_batch,
             )
 
@@ -319,7 +319,7 @@ class Interactions(object):
                     timestamps=timestamps_batch,
                     weights=weights_batch,
                     user_features=_slice_or_none(user_features, uids_batch),
-                    item_features=item_features,
+                    item_features=_slice_or_none(item_features, iids_batch),
                     context_features=cf_batch,
                 )
 
