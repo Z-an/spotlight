@@ -17,7 +17,7 @@ class HybridContainer(nn.Module):
                  context_module=None,
                  item_module=None):
 
-        super(HybridContainer, self).__init__()
+        super(HybridContainer, self).__init__()nt
 
         self.latent = latent_module
         self.user = user_module
